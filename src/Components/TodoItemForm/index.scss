@@ -1,0 +1,14 @@
+.todo-item-form {
+  display: flex;
+  justify-content: center;
+
+  .add-button {
+    width: 20%;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .add-input {
+    width: 80%;
+    border-radius: 4px 0 0 4px;
+  }
+}
