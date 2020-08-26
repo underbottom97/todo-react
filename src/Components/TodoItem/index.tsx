@@ -8,14 +8,13 @@ import './index.scss';
 interface TodoItemProps {
   item: TodoItemInterface;
   setItems: Dispatch<SetStateAction<TodoItemInterface[]>>;
-  index: number;
   items: TodoItemInterface[];
 }
 
-export const TodoItem: React.FC<TodoItemProps> = ({ item, setItems, index, items }) => {
+export const TodoItem: React.FC<TodoItemProps> = ({ item, setItems, items }) => {
   function statusChangeHandler(status: TodoItemStatusType) {
     const newItem = { ...item, status };
-    const newItems = items.map((todoItem, key) => (index === key ? newItem : item));
+    const newItems = items.map((todoItem) => (todoItem.id === item.id ? newItem : todoItem));
     setItems(newItems);
   }
 
