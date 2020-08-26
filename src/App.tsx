@@ -7,7 +7,7 @@ import { Container } from '@material-ui/core';
 export interface TodoItemInterface {
   id: number;
   text: string;
-  status: 'progress' | 'deleted' | 'done';
+  status: 'inProgress' | 'delete' | 'done';
 }
 
 export interface TodoItemState {
