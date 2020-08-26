@@ -3,6 +3,7 @@ import { TodoItemInterface } from '../../App';
 import { IconButton, ListItem, ListItemSecondaryAction, ListItemText } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { TodoItemStatusType } from '../../enums/TodoItemStatusType';
+import './index.scss';
 
 interface TodoItemProps {
   item: TodoItemInterface;
@@ -29,7 +30,10 @@ export const TodoItem: React.FC<TodoItemProps> = ({ item, setItems, index, items
         )
       }
     >
-      <ListItemText primary={item.text} />
+      <ListItemText
+        className={item.status === TodoItemStatusType.done ? 'done' : ''}
+        primary={item.text}
+      />
       <ListItemSecondaryAction>
         <IconButton
           edge="end"
