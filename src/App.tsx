@@ -3,11 +3,12 @@ import './App.scss';
 import { TodoItemForm } from './Components/TodoItemForm';
 import { TodoItemList } from './Components/TodoItemList';
 import { Container } from '@material-ui/core';
+import { TodoItemStatusType } from './enums/TodoItemStatusType';
 
 export interface TodoItemInterface {
   id: number;
   text: string;
-  status: 'inProgress' | 'deleted' | 'done';
+  status: TodoItemStatusType;
 }
 
 export interface TodoItemState {
