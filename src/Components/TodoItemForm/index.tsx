@@ -33,6 +33,7 @@ export const TodoItemForm: React.FC<TodoItemState> = ({ items, setItems }) => {
         color="primary"
         endIcon={<Icon>add</Icon>}
         onClick={() => addNewTodoItem()}
+        disabled={inputValue.length === 0}
       >
         Add
       </Button>
