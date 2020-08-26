@@ -31,8 +31,12 @@ export const TodoItem: React.FC<TodoItemProps> = ({ item, setItems, index, items
     >
       <ListItemText primary={item.text} />
       <ListItemSecondaryAction>
-        <IconButton edge="end" aria-label="delete">
-          <DeleteIcon onClick={() => statusChangeHandler(TodoItemStatusType.deleted)} />
+        <IconButton
+          edge="end"
+          aria-label="delete"
+          onClick={() => statusChangeHandler(TodoItemStatusType.deleted)}
+        >
+          <DeleteIcon />
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
