@@ -18,7 +18,7 @@ export const TodoItemForm: React.FC<TodoItemState> = ({ items, setItems }) => {
   const [lastItemId, setLastItemId] = useState<number>(0);
 
   function addNewTodoItem() {
-    setItems([...items, { id: lastItemId + 1, text: inputValue }]);
+    setItems([...items, { id: lastItemId + 1, text: inputValue, status: 'progress' }]);
     setInputValue('');
     setLastItemId(lastItemId + 1);
   }
