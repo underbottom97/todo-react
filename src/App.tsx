@@ -1,25 +1,27 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import './App.scss';
 import { TodoItemForm } from './Components/TodoItemForm';
+import { TodoItemList } from './Components/TodoItemList';
 import { Container } from '@material-ui/core';
 
-export interface TodoItem {
+export interface TodoItemInterface {
   id: number;
   text: string;
   status: 'progress' | 'delete' | 'done';
 }
 
 export interface TodoItemState {
-  items: TodoItem[];
-  setItems: Dispatch<SetStateAction<TodoItem[]>>;
+  items: TodoItemInterface[];
+  setItems: Dispatch<SetStateAction<TodoItemInterface[]>>;
 }
 
 function App() {
-  const [items, setItems] = useState<TodoItem[]>([]);
+  const [items, setItems] = useState<TodoItemInterface[]>([]);
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="md">
       <TodoItemForm setItems={setItems} items={items} />
+      <TodoItemList setItems={setItems} items={items} />
     </Container>
   );
 }

@@ -1,17 +1,7 @@
 import { TextField, Button, Icon } from '@material-ui/core';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import './index.scss';
-import { TodoItem, TodoItemState } from '../../App';
-
-export interface TodoItemFormData {
-  items: TodoItem[];
-  setItems: Dispatch<SetStateAction<TodoItem[]>>;
-}
-
-export interface LastItemIdState {
-  lastItemId: number;
-  setLastItemId: Dispatch<SetStateAction<number>>;
-}
+import { TodoItemState } from '../../App';
 
 export const TodoItemForm: React.FC<TodoItemState> = ({ items, setItems }) => {
   const [inputValue, setInputValue] = useState('');
